@@ -1,9 +1,10 @@
 
 .menu{
 display:flex;
-border:solid 2px white;
 justify-content:center;
+border:thick double #ffffff;
 padding:10px;
+list-style-type:none;
 }
 
 .menu a{
@@ -44,7 +45,7 @@ padding-top:150px;
 color:white;
 text-shadow:2px 2px 2px black;
 border:solid 2px white;
-background-image:url('../img/aleg.jpg');
+background-image:url('../images/aleg.jpg');
 background-size:cover;
    }
 
@@ -95,5 +96,15 @@ padding: 10px;
 }
 
 .but_log{
-margin:300;	
+margin:100;
+}
+
+header{
+margin:30px;
+align-items:center;
+}
+
+.welcom{
+font-size:25px;
+text-align:center;
 }
