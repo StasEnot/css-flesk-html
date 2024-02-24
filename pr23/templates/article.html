@@ -1,0 +1,15 @@
+{% extends "basik.html"%}
+{% block main %}
+
+<section class="logo_article">
+        <h1>Discover someting new</h1>
+</section>
+<section class="text_section">
+        <h2>One new City</h2>
+        {% for article in articles%}
+            <h3>{{ articles }}</h3>
+        {% endfor %}
+
+</section>
+
+{% endblock %}

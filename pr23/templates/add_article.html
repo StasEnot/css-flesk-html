@@ -1,0 +1,26 @@
+{% extends "basik.html"%}
+{% block main %}
+    <form name="add_article" method="post" action="#">
+      <h2> Add a new arricle</h2>
+	  <p> Article title</p>
+	  <input name="title" type="text" required placeholder="Your title">
+	  <p> Article text</p>
+	  <textarea name="text" required rows="15" cols="100" placeholder="Your text"></textarea>
+	  <p> Image URL</p>
+	  <input name="URL" type="url" required placeholder="Image URL">
+	  <p>Continent</p>
+	  <select name = "select">
+		<option value="vaule1" selected>Africa</option>
+		<option value="vaule2" >Asia</option>
+		<option value="vaule3" >Europa</option>
+		<option value="vaule4" >North America</option>
+		<option value="vaule5" >South America</option>
+		<option value="vaule6" >Antarcita</option>
+		<option value="vaule7" >Australia</option>
+      </select><br>
+	  
+	  <button> Add Article</button>
+	  <button> Reset</button>
+	  
+	</form>
+{% endblock %}
