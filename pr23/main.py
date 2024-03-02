@@ -10,10 +10,25 @@ app.config['SQLALCHEMY_DATABASE_URI'] =\
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
-class Role(db.Model):
-      __table=name__ = 'roles'
-      id = db.Column(db.Integer,primary__kry=True)
-      name = db.Column(db.String(64), unique=True)
+class Administarator_data(db.Model):
+      __tablename__ = 'administarator_data'
+      id = db.Column(db.SmallInteger(),primary_key=True)
+      login = db.Column(db.String(64), unique=True, nullable=False)
+      pasasword = db.Column(db.SmallInteger(), nullable=False)
+
+
+class article(db.Model):
+    __tablename__ = 'article'
+    id = db.Column(db.Integer(), primary_key=True)
+    name = db.Column(db.String(200), unique=True, nullable=False)
+    text = db.Column(db.Text(900), unique=True)
+    images = db.Column(db.Text(128), unique=True, nullable=False)
+    Continent = db.Column(db.String(12))
+    data = db.Column(db.Date(), unique=True, nullable=False)
+
+
+
+
 @app.route('/')
 def Index():
     return render_template('index.html')
