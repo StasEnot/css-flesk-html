@@ -1,0 +1,45 @@
+<DOOKTYPE HTML!>
+
+<html>
+ <head>
+  <title>Rediscover the world</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../static/css/style.css">
+ </head>
+
+ <body>
+
+
+  <header>
+    <nav class="nav_header">
+      <ul class="menu">
+        <li><a href="Admin">Main</a></li>
+		<li><a href="Article">Iteresting places</a></li>
+        <li><a href="Add_Article">Add Article</a></li>
+        <li><a href="Login">Login</a></li>
+	  </ul>
+	</nav>
+       <div class="welcom">
+           {%if user_name%}
+              <p>Welcom, {{user_name}}!</p>
+           {%else%}
+              <p>Welcom</p>
+           {%endif%}
+       </div>
+  </header>
+    <main>
+  {% block main %}
+  {% endblock %}
+    </main>
+  <footer>
+    <span class="span_footer">
+	  Copyright © 1999-2020 Ctrip.com (Hong Kong) Limited. All rights reserved.<br>
+      Site Operator: Ctrip.com (Hong Kong) Limited<br>
+      Hong Kong Travel License No. 352367<br>
+	</span>
+  </footer>
+
+ </body>
+
+</html>
+

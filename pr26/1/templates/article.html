@@ -1,0 +1,22 @@
+{% extends "basik.html"%}
+{% block main %}
+
+<section class="logo_article">
+        <h1>Discover someting new</h1>
+        {% for article in articles%}
+            <h3>{{ articles }}</h3>
+        {% endfor %}
+</section>
+<section class="text_section">
+        <h2>One new City</h2>
+        {%for article in articles%}
+            <h3>{{article.name}}</h3>
+            <p>{{article.text}}</p>
+            <p>{{article.continent}}</p>
+            <div><img src="{{article.image_link}}"></div>
+        {%endfor%}
+
+</section>
+
+{% endblock %}
+
