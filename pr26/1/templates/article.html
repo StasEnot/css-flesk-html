@@ -1,22 +1,25 @@
-{% extends "basik.html"%}
-{% block main %}
+    {%extends "basik.html"%}
+    {%block main %}
 
-<section class="logo_article">
-        <h1>Discover someting new</h1>
-        {% for article in articles%}
-            <h3>{{ articles }}</h3>
-        {% endfor %}
-</section>
-<section class="text_section">
+    <section class="logo_article">
+        <h1>Discover something new</h1>
+    </section>
+    <section class="spysok">
         <h2>One new City</h2>
         {%for article in articles%}
-            <h3>{{article.name}}</h3>
-            <p>{{article.text}}</p>
-            <p>{{article.continent}}</p>
-            <div><img src="{{article.image_link}}"></div>
+        <div class="container">
+            <div class="post_img"><img src="{{article.image_link}}"></div>
+            <div class="article_text">
+                <div>
+                    <h3>{{article.name}}</h3>
+                    <p class="details">{{article.continent}}</p>
+                    <p class="text">{{article.text}}</p>
+                </div>
+            </div>
+            <div><a href="/post_details/{{article.id}}">More details</a></div>
+        </div>
+
         {%endfor%}
+    </section>
 
-</section>
-
-{% endblock %}
-
+    {%endblock%}

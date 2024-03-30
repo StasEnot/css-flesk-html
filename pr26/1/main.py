@@ -47,18 +47,20 @@ class Posts(db.Model):
 def index():
     return render_template('index.html')
 
-@app.route('/Login')
-def login():
-    return render_template('login.html')
-
 @app.route('/<name>')
 def user_index(name):
     return render_template('index.html', user_name=name)
 
+@app.route('/Add_Article')
+def add_article():
+    return render_template('add_article.html')
+
+
+
 @app.route('/Article')
 def Article():
     new_article = Posts.query.all()
-    return render_template('article.html', articles = new_article)
+    return render_template('article.html', article=new_article)
 
 @app.route('/Admin', methods = ['GET'])
 def Admin_enter():
@@ -75,15 +77,35 @@ def Admin_login():
 
 @app.route('/add_post', methods = ['POST'])
 def add_post():
-    title = request.form['title']
+    name = request.form['name']
     text = request.form['text']
-    URL = request.form['URL']
+    url = request.form['url']
     continent = request.form['continent']
-    row = Posts(title, text, URL, continent)
+    row = Posts(name, text, url, continent)
     db.session.add(row)
     db.session.commit()
-    return render_template('add_article.html')
+    return render_template('article.html')
 
+
+@app.route('/post_details/<number>')
+def post_details(numbers):
+    row = Posts.query.filter_by(id=-number).first()
+    return render_template('details.html', row=row)
+
+@app.route('/Del_article', methods=['GET'])
+def del_article_form():
+    articles = Posts.query.all()
+    return render_template('/delete_article.html', articles="articles")
+
+@app.route('/Del_article', methods=['POST'])
+def del_articles():
+    id_list = request.form.getlist('id')
+    for id in id_list:
+        row = Posts.query.filter_by(id=id).first()
+        db.session.delete(row)
+    db.session.commit()
+    articles = Posts.query.all()
+    return render_template('/delete_article.html', articles = "articles")
 
 if __name__ == '__main__':
     app.run()

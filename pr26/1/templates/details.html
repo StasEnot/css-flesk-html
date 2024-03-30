@@ -1,0 +1,13 @@
+{% extends "basik.html"%}
+
+{% block main %}
+  <section>
+    <h2>{{row,name}}</h2>
+    <div class="full_post_image"><img src="{{row.image_link}}"></div>
+    <div class="full_container">
+        <p class="details">{{ row.continent}}</p>
+        <p class="full_text">{{ row.post_text}}</p>
+    </div>
+  </section>
+
+{% endblock %}

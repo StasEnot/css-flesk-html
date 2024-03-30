@@ -13,18 +13,11 @@
   <header>
     <nav class="nav_header">
       <ul class="menu">
-        <li><a href="/">Main</a></li>
-		<li><a href="/Article">Iteresting places</a></li>
-        <li><a href="/Admin">Login</a></li></li>
+          <li><a href="/">Main</a></li>
+		  <li><a href="/Add_post">Add Article</a></li>
+          <li><a href="/Del_post">Delete Article</a></li>
 	  </ul>
 	</nav>
-       <div class="welcom">
-           {%if user_name%}
-              <p>Welcom, {{user_name}}!</p>
-           {%else%}
-              <p>Welcom</p>
-           {%endif%}
-       </div>
   </header>
     <main>
   {% block main %}
