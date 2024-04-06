@@ -1,0 +1,36 @@
+header{
+display:flex;
+justify-content:center;
+padding-bottom:25px;
+margin:15px;
+}
+
+nav{
+box-shadow:0 0 0 5px Blue;
+border-radius:15px;	
+width:850px;
+display:flex;
+justify-content:center;
+}
+
+ul{
+display:flex;
+justify-content:center;
+list-style-type:none;
+}
+
+li{
+padding-left:70px;
+padding-right:70px;
+font-size:25px;
+}
+
+li:hover a{
+color:Blue;	
+
+}
+
+a{
+text-decoration:none;
+color:black;
+}
